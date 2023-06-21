@@ -1,0 +1,148 @@
+!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AL202012976</title>
+    <link rel="stylesheet" href="css\footballinfo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<nav class="logotop">
+  <br>
+  <img src="pics\logo.png" class="logo">
+  <br>
+  <br>
+  <br>
+  <br>
+</nav>
+<nav class="navbar">
+    <ul>
+        <li><a class="nav" href="homepage.html">Home</a></li>
+        <div class="dropdown">
+            <li><a class="nav" href="#">More</a></li>
+            <div class="dropdown-content">
+                <p><a class="hover" href="giveaway.html">GIVE AWAYS</a></p>
+                <p><a class="hover" href="more.html">UP COMING EVENTS</a></p>
+              </div>
+            </div>
+        <li><a  class="nav" href="about.html">About</a></li>
+        <li><a class="nav" href="help.html">Help</a></li>
+
+    </ul>
+</nav>
+<br>
+<br>
+<br>
+
+<body>
+
+<div class="info">
+    <h1 class="title">Cricket</h1>
+    <a href="https://www.royalchallengers.com/"><img class="team" src="pics\rcb.png"></a>
+    <a href="https://www.facebook.com/bacrc/"><img class="teamr" src="pics\bacrc.png"></a>
+
+
+    <h3><a class="play" href="#">Royal Challengers Bangalore VS Buenos Aires Cricket Rugby Club</a></h3>
+    
+
+    <p class="pur"><a  class="purchase" href="#">Bleachers:$25</a></p>
+    <p class="pur"><a class="purchase" href="#">Main Stand:$25</a></p>
+
+    <hr size="10" width="75%" color="black">  
+    <br>
+    <br>
+
+   
+    <a href="http://www.chennaisuperkings.com/"><img class="team" src="pics\csk.png"></a>
+    <a href="https://www.windiescricket.com/"><img class="teamr" src="pics\cwi.png"></a>
+
+
+    <h3><a class="play" >Chennai Super Kings VS Cricket West Indies</a></h3>
+
+    <p class="pur"><a  class="purchase" href="#">Bleachers:$25</a></p>
+    <p class="pur"><a class="purchase" href="#">Main Stand:$25</a></p>
+    
+    <hr size="10" width="75%" color="black">  
+
+    <div id="popup" class="overlay">
+        <div class="popup-content">
+          <h2>Cricket Tickets</h2>
+        
+          <form>
+            <label for="game">Select Game:</label>
+            <select id="game" name="game">
+              <option value="game1">RCB VS BACRC</option>
+              <option value="game2">CSK VS CWI</option>
+
+            </select>
+            <br>
+            <br>
+            <label for="seat">Select Seat:</label>
+            <select id="seat" name="seat">
+                <option value="Bleachers">Bleachers</option>
+                <option value="Mainstand">Mainstand</option>
+            </select>
+            <p>Tickets</p>
+            <input type="number" id="quantity">
+            <h2>Total: <span id="total">0</span></h2>
+          </form>
+          
+         
+
+          <button type="submit">Purchase</button>
+          <button onclick="hidePopup()">Close</button>
+        </div>
+      </div>
+      
+
+
+
+    <script>function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
+      
+      function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+      
+      document.getElementById("popup").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Process the ticket purchase here
+      hidePopup();
+      });
+
+     
+      function calculateTotal() {
+    var quantity = parseInt(document.getElementById("quantity").value);
+    var price = 25;
+    
+    var total = quantity * price;
+    document.getElementById("total").textContent = total.toFixed(2);
+  }
+  
+  // Event listeners for input fields
+  document.getElementById("quantity").addEventListener("input", calculateTotal);
+  document.getElementById("price").addEventListener("input", calculateTotal);
+  
+  // Initial calculation of total
+  calculateTotal();
+      </script>
+
+<div class="bt"> <button onclick="showPopup()" class="btngm">Buy Game Ticket</button>
+
+</div>
+</body>
+<br>
+<br>
+<footer>
+  &copy; 2023 SPORTS PLAY.      All rights reserved.
+    <ul class="foot">
+      <li class="footer"><a class="afoot" href="https://mail.google.com/mail/u/0/">Email</a></li>
+      <li class="footer"><a class="afoot" href="https://www.facebook.com/">Facebook</a></li>
+      <li class="footer"><a class="afoot" href="https://www.instagram.com/">Instagram</a></li>
+        
+        
+    </ul>
+</footer>
+
+</html>
